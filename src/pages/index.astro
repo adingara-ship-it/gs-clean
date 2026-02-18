@@ -1,0 +1,272 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const services = [
+  {
+    title: "Vitres, vitrines & châssis",
+    text: "Nettoyage sans traces pour maisons, commerces et bureaux. Passage ponctuel ou contrat régulier.",
+    image: "/vitre.jpg"
+  },
+  {
+    title: "Canapés, tapis & tissus",
+    text: "Injection-extraction professionnelle pour retirer taches, odeurs et poussières incrustées.",
+    image: "/tissu.jpg"
+  },
+  {
+    title: "Nettoyage fin de chantier",
+    text: "Remise en état complète après travaux : sols, poussières, vitres et détails de finition.",
+    image: "/chantier.jpg"
+  }
+];
+
+const cities = [
+  {
+    name: "La Louvière",
+    href: "/nettoyage/la-louviere/",
+    text: "Interventions rapides pour habitations, commerces et bureaux."
+  },
+  {
+    name: "Mons",
+    href: "/nettoyage/mons/",
+    text: "Prestations adaptées aux professionnels et particuliers."
+  },
+  {
+    name: "Charleroi",
+    href: "/nettoyage/charleroi/",
+    text: "Nettoyage complet avec suivi rigoureux et résultat durable."
+  },
+  {
+    name: "Nivelles",
+    href: "/nettoyage/nivelles/",
+    text: "Services ponctuels et réguliers selon vos besoins."
+  }
+];
+
+const gallery = [
+  "https://placehold.co/800x1000/f0f0f0/333?text=Avant+Apres+1",
+  "https://placehold.co/800x600/f0f0f0/333?text=Realisation+2",
+  "https://placehold.co/800x600/f0f0f0/333?text=Realisation+3",
+  "https://placehold.co/800x1000/f0f0f0/333?text=Realisation+4",
+  "https://placehold.co/800x600/f0f0f0/333?text=Realisation+5",
+  "https://placehold.co/800x600/f0f0f0/333?text=Realisation+6"
+];
+---
+
+<MainLayout
+  title="GS Clean | Nettoyage professionnel à La Louvière, Mons, Charleroi et Nivelles"
+  description="GS Clean propose un nettoyage professionnel en Hainaut et Brabant wallon: vitres, tissus, fin de chantier. Devis gratuit."
+>
+  <Fragment slot="head">
+    <link rel="canonical" href="https://www.gsclean.be/" />
+    <meta property="og:title" content="GS Clean | Nettoyage professionnel en Hainaut et Brabant wallon" />
+    <meta
+      property="og:description"
+      content="Service de nettoyage pour particuliers et professionnels. Intervention à La Louvière, Mons, Charleroi et Nivelles."
+    />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "GS Clean",
+      image: "https://www.gsclean.be/logo.png",
+      url: "https://www.gsclean.be/",
+      telephone: "+32499469093",
+      email: "info@gsclean.be",
+      areaServed: ["La Louvière", "Mons", "Charleroi", "Nivelles"],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "La Louvière",
+        postalCode: "7110",
+        addressCountry: "BE"
+      },
+      sameAs: ["https://www.facebook.com/", "https://www.instagram.com/"]
+    })} />
+  </Fragment>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Retour à l'accueil GS Clean">
+        <img src="/logo.png" alt="GS Clean" />
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#zones">Zones</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-header" href="tel:+32499469093">0499 46 90 93</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <p class="tag">Nettoyage professionnel — Hainaut & Brabant wallon</p>
+          <h1>Des espaces propres, un service fiable</h1>
+          <p>
+            Vitres, tissus, fin de chantier. GS Clean intervient à La Louvière, Mons, Charleroi et Nivelles avec un seul objectif : un résultat impeccable.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn" href="#contact">Demander un devis gratuit</a>
+            <a class="btn btn-ghost" href="tel:+32499469093">0499 46 90 93</a>
+          </div>
+          <ul class="hero-points">
+            <li>Vitres & châssis</li>
+            <li>Canapés & tapis</li>
+            <li>Fin de chantier</li>
+            <li>Devis gratuit</li>
+          </ul>
+        </div>
+        <div class="hero-panel reveal">
+          <img src="/nettoyage.jpg" alt="Intervention nettoyage GS Clean" />
+          <div class="hero-card">
+            <strong>4 zones couvertes</strong>
+            <p>La Louvière · Mons · Charleroi · Nivelles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section metrics">
+      <div class="container metrics-grid">
+        <article>
+          <p class="metric">+350</p>
+          <p>interventions réalisées</p>
+        </article>
+        <article>
+          <p class="metric">24h</p>
+          <p>pour un premier retour</p>
+        </article>
+        <article>
+          <p class="metric">4 zones</p>
+          <p>d'intervention en Wallonie</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="heading reveal">
+          <p class="kicker">Services</p>
+          <h2>Trois prestations, un même niveau d'exigence</h2>
+        </div>
+        <div class="service-grid">
+          {
+            services.map((service) => (
+              <article class="service reveal">
+                <img src={service.image} alt={service.title} loading="lazy" />
+                <div class="service-copy">
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Zones -->
+    <section class="section zones" id="zones">
+      <div class="container">
+        <div class="heading reveal">
+          <p class="kicker">Zones d'intervention</p>
+          <h2>Présents là où vous avez besoin de nous</h2>
+        </div>
+        <div class="zone-grid">
+          {
+            cities.map((city) => (
+              <article class="zone-card reveal">
+                <h3>{city.name}</h3>
+                <p>{city.text}</p>
+                <a href={city.href}>En savoir plus &rarr;</a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery" id="realisations">
+      <div class="container">
+        <div class="heading reveal">
+          <p class="kicker">Réalisations</p>
+          <h2>Le résultat parle de lui-même</h2>
+        </div>
+        <div class="mosaic">
+          {
+            gallery.map((image, idx) => (
+              <img src={image} alt={`Réalisation GS Clean ${idx + 1}`} loading="lazy" />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="section trust">
+      <div class="container">
+        <div class="heading reveal">
+          <p class="kicker">Avis clients</p>
+          <h2>Ce que disent nos clients</h2>
+        </div>
+        <div class="reviews">
+          <blockquote class="reveal">
+            <p>"Travail propre, ponctualité et communication claire. Nous avons confié tout l'entretien vitres."</p>
+            <cite>Magasin — La Louvière</cite>
+          </blockquote>
+          <blockquote class="reveal">
+            <p>"Nettoyage fin de chantier très sérieux. Les locaux étaient prêts à être utilisés le lendemain."</p>
+            <cite>Entreprise — Mons</cite>
+          </blockquote>
+          <blockquote class="reveal">
+            <p>"Très bon résultat sur canapé et tapis. Intervention rapide et équipe professionnelle."</p>
+            <cite>Particulier — Charleroi</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-band" id="contact">
+      <div class="container cta-wrap reveal">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Un besoin ? Parlons-en</h2>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" href="tel:+32499469093">Appeler maintenant</a>
+          <a class="btn btn-alt" href="mailto:info@gsclean.be">Envoyer un e-mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="/logo.png" alt="GS Clean" class="footer-logo" />
+        <p>Nettoyage professionnel<br />pour particuliers et entreprises.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>7110 La Louvière</p>
+        <p><a href="tel:+32499469093">0499 46 90 93</a></p>
+        <p><a href="mailto:info@gsclean.be">info@gsclean.be</a></p>
+      </div>
+      <div>
+        <h3>Pages locales</h3>
+        <p><a href="/nettoyage/la-louviere/">Nettoyage La Louvière</a></p>
+        <p><a href="/nettoyage/mons/">Nettoyage Mons</a></p>
+        <p><a href="/nettoyage/charleroi/">Nettoyage Charleroi</a></p>
+        <p><a href="/nettoyage/nivelles/">Nettoyage Nivelles</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+32499469093">Appeler</a>
+</MainLayout>
